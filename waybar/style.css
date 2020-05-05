@@ -1,0 +1,78 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Source Code Pro";
+    font-weight: 500;
+    font-size: 15px;
+    min-height: 0;
+    color: #eceff4;
+}
+
+#waybar {
+    background-color: #2E3440;
+    border-bottom: 3px solid transparent;
+    transition-property: background-color;
+    transition-duration: .2s;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    border-bottom: 3px solid #3b4252;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, .2); 
+    box-shadow: inherit;
+}
+
+#workspaces button.focused {
+    border-bottom: 3px solid #88c0d0;
+}
+
+#workspaces button.urgent {
+    border-bottom: 3px solid #bf616a;
+}
+
+#mode {
+    border-bottom: 3px solid #88c0d0;
+}
+
+#window,
+#custom-window,
+#custom-battery,
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#idle_inhibitor,
+#custom-media {
+    padding: 2px 8px;
+    margin: 0 5px;
+    border-bottom: 3px solid #88c0d0;
+}
+
+@keyframes blink {
+    to {
+	border-bottom: 3px solid #88c0d0;
+    }
+}
+
+#battery.critical:not(.charging) {
+    border-bottom: 3px solid #bf616a;
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.low {
+    border-bottom: 3px solid #ebcb8b;
+}
